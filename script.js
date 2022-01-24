@@ -77,7 +77,7 @@ restart.addEventListener('click', function () {
     })
     turn.textContent = "X's turn";
 
-    restart.setAttribute('style', ' display: none ')
+    restart.setAttribute('style', ' visibility : hidden; ')
     startgame()
 })
 
@@ -86,5 +86,5 @@ function gamecompletes() {
         cell.classList.add('boxR')
     })
     box.classList.add('gameboxR')
-    restart.setAttribute('style', ' display: block ')
+    restart.setAttribute('style', ' visibility : visible; ')
 }

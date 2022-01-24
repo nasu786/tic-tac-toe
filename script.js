@@ -76,7 +76,7 @@ restart.addEventListener('click', function () {
         cell.classList.remove('o');
         cell.classList.remove('x');
     })
-    turn.textContent = "X's turn";
+    turn.textContent = "X's Turn";
     turn.setAttribute('style', 'transform: scale(1)')
     restart.setAttribute('style', ' opacity: 0%; ')
     startgame()

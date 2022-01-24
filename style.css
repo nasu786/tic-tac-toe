@@ -18,6 +18,18 @@ body {
 
 }
 
+.main{
+    position: absolute;
+    transform: translateY(20px);
+}
+
+.text-win{
+    visibility: hidden;
+    opacity: 0%;
+    text-align: center;
+    transition: all .3s ease-out;
+}
+
 h2 {
     font-size: 40px;
     height: 50px;
@@ -61,7 +73,7 @@ h2 {
 .button {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 100px;
 
 }
 
@@ -69,7 +81,6 @@ button {
     opacity: 0%;
     width: 250px;
     height: 70px;
-    background: rgb(16, 235, 63);
     border: none;
     font-size: 20px;
     color: white;
@@ -78,8 +89,12 @@ button {
 }
 
 button:hover {
-    box-shadow: -1px -1px 30px -10px rgba(0, 240, 53, 0.75);
+    box-shadow: 0px 0px 45px 6px rgba(5,255,0,0.30);
     cursor: pointer;
+}
+
+.blue-hover:hover{
+    box-shadow: -1px -1px 30px -1px rgba(19, 74, 253, 0.75);
 }
 
 button:active {

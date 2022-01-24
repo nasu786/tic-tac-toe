@@ -2,6 +2,7 @@ const gamebox = document.querySelectorAll('.box')
 const box = document.querySelector('.gamebox')
 const turn = document.getElementById('turn');
 const restart = document.getElementById('restart');
+const textWin = document.getElementById('text-win');
 let switchPlayer;
 const x_player = 'x';
 const o_player = 'o';
@@ -12,6 +13,7 @@ startgame()
 function startgame() {
     gamebox.forEach(cell => {
         cell.classList.remove('boxR')
+        
     })
     box.classList.remove('gameboxR')
 
@@ -51,12 +53,17 @@ function checkWin(currentclass) {
 
 function endGame(draw) {
     if (draw) {
-        turn.innerText = 'Draw!'
-        gamecompletes()
+        textWin.innerText = 'Draw!'
+        textWin.setAttribute('style', 'opacity: 100%; transform: scale(5); visibility: visible;');
+        turn.setAttribute('style', ' opacity: 0%; ');
+        gamecompletes();
+        drawcolor();
     } else {
-        turn.innerText = `${switchPlayer ? "O " : "X "} Wins!`;
-        turn.setAttribute('style', 'transform: scale(1.5)')
-        gamecompletes()
+        textWin.innerText = `${switchPlayer ? "O " : "X "} Wins!`;
+        textWin.setAttribute('style', 'opacity: 100%;transform: scale(5); visibility: visible;');
+        turn.setAttribute('style', ' opacity: 0%; ');
+        gamecompletes();
+        wincolor();
     }
 }
 
@@ -75,10 +82,13 @@ restart.addEventListener('click', function () {
         cell.textContent = "";
         cell.classList.remove('o');
         cell.classList.remove('x');
+        cell.setAttribute('style', ' background-color: rgb(33, 79, 230);')
     })
     turn.textContent = "X's Turn";
-    turn.setAttribute('style', 'transform: scale(1)')
+    turn.setAttribute('style', ' opacity: 100%; ')
+    textWin.setAttribute('style', 'transform: scale(1);visibility: hidden;')
     restart.setAttribute('style', ' opacity: 0%; ')
+    restart.classList.remove('blue-hover');
     startgame()
 })
 
@@ -89,4 +99,19 @@ function gamecompletes() {
     })
     box.classList.add('gameboxR')
     restart.setAttribute('style', ' opacity: 100%; ')
+}
+
+function drawcolor(){
+    gamebox.forEach(cell => {
+        cell.setAttribute('style', 'box-shadow: 0px 0px 45px 6px rgba(255,0,0,0.30); background-color: red;')
+    })
+    restart.setAttribute('style', ' background: #0edf0e; opacity: 100%; ')
+}
+
+function wincolor(){
+    gamebox.forEach(cell => {
+        cell.setAttribute('style', 'box-shadow: 0px 0px 45px 6px rgba(5,255,0,0.30); background-color: #0edf0e;')
+    })
+    restart.setAttribute('style', ' background-color: rgb(33, 79, 230); opacity: 100%; ')
+    restart.classList.add('blue-hover');
 }

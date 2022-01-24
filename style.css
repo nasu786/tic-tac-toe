@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&family=Raleway:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +7,18 @@
     font-family: 'Merienda', sans-serif;
 }
 
-body{
+body {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: black;
-    color: white;
+    color: rgb(216, 222, 240);
 
 }
 
-h2{
+h2 {
     font-size: 40px;
     height: 50px;
     margin-bottom: 20px;
@@ -28,58 +29,33 @@ h2{
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    
+    transition: all .3s ease-out;
+
 }
 
-.gamebox{
+.gamebox {
     display: grid;
-    grid : repeat(3,1fr) / repeat(3, 1fr);
-
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 8px;
 }
 
 .box {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid rgb(3, 115, 243);
-    font-size: 100px;
+    border-radius: 5px;
+    background-color: rgb(33, 79, 230);
+    font-size: 80px;
+    color: black;
     cursor: pointer;
-    
+    transition: all .2s ease-out;
+
 }
-
-
-.box:nth-of-type(1){
-    border-radius: 10px 0px 0px 0px;
-}
-
-.box:nth-of-type(3){
-    border-radius: 0px 10px 0px 0px;
-}
-
-.box:nth-of-type(7){
-    border-radius: 0px 0px 0px 10px;
-}
-
-.box:nth-of-type(9){
-    border-radius: 0px 0px 10px 0px;
-}
-
-.box:nth-of-type(-n+3){
-    border-bottom: none;
-}
-
-.box:nth-of-type(4), .box:nth-of-type(5),.box:nth-of-type(6){
-    border-bottom: none;
-}
-
-.box:nth-of-type(3n + 1){
-    border-right: none;
-}
-
-.box:nth-of-type(3n + 3){
-    border-left: none;
+.box:hover{
+    transform: scale(1.05);
+    box-shadow: -1px -1px 30px -1px rgba(19, 74, 253, 0.75);
 }
 
 .button {
@@ -90,18 +66,19 @@ h2{
 }
 
 button {
-    visibility : hidden;
-    width: 150px;
+    opacity: 0%;
+    width: 250px;
     height: 70px;
-    background: rgb(16, 238, 64);
+    background: rgb(16, 235, 63);
     border: none;
     font-size: 20px;
     color: white;
     border-radius: 10px;
+    transition: all .3s ease-out;
 }
 
 button:hover {
-    box-shadow: -1px -1px 30px -15px rgba(0, 240, 53, 0.75);
+    box-shadow: -1px -1px 30px -10px rgba(0, 240, 53, 0.75);
     cursor: pointer;
 }
 
@@ -109,11 +86,11 @@ button:active {
     transform: scale(0.97);
 }
 
-.o, .x{}
 
-.gameboxR , .boxR{
+
+.o, .x {}
+
+.gameboxR, .boxR {
     cursor: not-allowed;
-    color: rgb(155, 155, 155);
     filter: blur(3px);
 }
-

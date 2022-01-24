@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Raleway:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+
+}
+
+h2{
+    font-size: 40px;
+    height: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.turn {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.gamebox{
+    display: grid;
+    grid : repeat(3,1fr) / repeat(3, 1fr);
+
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(3, 115, 243);
+    font-size: 100px;
+    cursor: pointer;
+    
+}
+
+
+.box:nth-of-type(1){
+    border-radius: 10px 0px 0px 0px;
+}
+
+.box:nth-of-type(3){
+    border-radius: 0px 10px 0px 0px;
+}
+
+.box:nth-of-type(7){
+    border-radius: 0px 0px 0px 10px;
+}
+
+.box:nth-of-type(9){
+    border-radius: 0px 0px 10px 0px;
+}
+
+.box:nth-of-type(-n+3){
+    border-bottom: none;
+}
+
+.box:nth-of-type(4), .box:nth-of-type(5),.box:nth-of-type(6){
+    border-bottom: none;
+}
+
+.box:nth-of-type(3n + 1){
+    border-right: none;
+}
+
+.box:nth-of-type(3n + 3){
+    border-left: none;
+}
+
+button{
+    display: none;
+    margin-top: 20px;
+    width : 150px;
+    height: 70px;
+    background: rgb(16, 238, 64) ;
+    border: none;
+    transform: translateX(100%);
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.o, .x{}
+
+.gameboxR , .boxR{
+    cursor: not-allowed;
+    color: rgb(155, 155, 155);
+    filter: blur(3px);
+}
+

@@ -54,7 +54,8 @@ function endGame(draw) {
         turn.innerText = 'Draw!'
         gamecompletes()
     } else {
-        turn.innerText = `${switchPlayer ? "O's" : "X's"} Wins!`
+        turn.innerText = `${switchPlayer ? "O " : "X "} Wins!`;
+        turn.setAttribute('style', 'transform: scale(1.5)')
         gamecompletes()
     }
 }
@@ -76,15 +77,16 @@ restart.addEventListener('click', function () {
         cell.classList.remove('x');
     })
     turn.textContent = "X's turn";
-
-    restart.setAttribute('style', ' visibility : hidden; ')
+    turn.setAttribute('style', 'transform: scale(1)')
+    restart.setAttribute('style', ' opacity: 0%; ')
     startgame()
 })
 
 function gamecompletes() {
     gamebox.forEach(cell => {
         cell.classList.add('boxR')
+        cell.removeEventListener('click', handClick)
     })
     box.classList.add('gameboxR')
-    restart.setAttribute('style', ' visibility : visible; ')
+    restart.setAttribute('style', ' opacity: 100%; ')
 }

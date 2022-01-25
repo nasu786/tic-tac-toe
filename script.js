@@ -98,20 +98,20 @@ function gamecompletes() {
         cell.removeEventListener('click', handClick)
     })
     box.classList.add('gameboxR')
-    restart.setAttribute('style', ' opacity: 100%; ')
+    
 }
 
 function drawcolor(){
     gamebox.forEach(cell => {
         cell.setAttribute('style', 'box-shadow: 0px 0px 45px 6px rgba(255,0,0,0.30); background-color: red;')
     })
-    restart.setAttribute('style', ' background: #0edf0e; opacity: 100%; ')
+    restart.setAttribute('style', ' background: #0edf0e; transform: scale(1); ')
 }
 
 function wincolor(){
     gamebox.forEach(cell => {
         cell.setAttribute('style', 'box-shadow: 0px 0px 45px 6px rgba(5,255,0,0.30); background-color: #0edf0e;')
     })
-    restart.setAttribute('style', ' background-color: rgb(33, 79, 230); opacity: 100%; ')
+    restart.setAttribute('style', ' background-color: rgb(33, 79, 230); transform: scale(1); ')
     restart.classList.add('blue-hover');
 }
